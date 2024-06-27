@@ -29,7 +29,8 @@ export const socialLinks: SocialLinksType = {
   email: "mailto:srikantasatapathy99@gmail.com",
   linkedin: "https://www.linkedin.com/in/srikanta-satapathy-a904511bb/",
   github: "https://github.com/srikantasatapathy",
-  instagram: "https://www.instagram.com/srikant.satapathy?igsh=NXZuZXFjODI5ODFo",
+  instagram:
+    "https://www.instagram.com/srikant.satapathy?igsh=NXZuZXFjODI5ODFo",
 };
 
 export const skillsSection: SkillsSectionType = {
@@ -40,42 +41,47 @@ export const skillsSection: SkillsSectionType = {
       title: "Full Stack Development",
       lottieAnimationFile: "/lottie/skills/fullstack.json", // Path of Lottie Animation JSON File
       skills: [
-        emoji("⚡ Building responsive Single-Page-Apps (SPA) & PWA in React.js"),
-        emoji("⚡ Building responsive static websites using Next.js"),
-        emoji("⚡ Building RESTful APIs in Django & Django REST Framework"),
+        "Building both android and ios mobile application using React Native",
+        "Building responsive static websites using Next.js",
+        "Building RESTful APIs in Node & Express REST Framework",
       ],
       softwareSkills: [
         {
           skillName: "Python",
-          iconifyTag: "logos:python",
+          iconifyTag: "logos:nodejs-icon-alt",
         },
         {
-          skillName: "Django",
-          iconifyTag: "vscode-icons:file-type-django",
+          skillName: "React-Native",
+          iconifyTag: "vscode-icons:file-type-reactjs",
         },
         {
           skillName: "JavaScript",
           iconifyTag: "logos:javascript",
         },
-        {
-          skillName: "Reactjs",
-          iconifyTag: "vscode-icons:file-type-reactjs",
-        },
+
         {
           skillName: "Nextjs",
           iconifyTag: "vscode-icons:file-type-light-next",
         },
         {
-          skillName: "AWS",
-          iconifyTag: "logos:aws",
+          skillName: "Mongodb",
+          iconifyTag: "devicon:mongodb-wordmark",
         },
         {
-          skillName: "Heroku",
-          iconifyTag: "logos:heroku-icon",
+          skillName: "MySql",
+          iconifyTag: "logos:mysql",
+        },
+        {
+          skillName: "Graphql",
+          iconifyTag: "vscode-icons:file-type-graphql",
         },
         {
           skillName: "Github",
           iconifyTag: "akar-icons:github-fill",
+        },
+        {
+          skillName: "AWS",
+          iconifyTag: "logos:aws",
         },
         {
           skillName: "Docker",
