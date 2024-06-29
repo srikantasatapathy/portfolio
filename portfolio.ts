@@ -92,90 +92,68 @@ export const skillsSection: SkillsSectionType = {
   ],
 };
 
-// export const SkillBars: SkillBarsType[] = [
-//   {
-//     Stack: "Frontend/Design", //Insert stack or technology you have experience in
-//     progressPercentage: "85", //Insert relative proficiency in percentage
-//   },
-//   {
-//     Stack: "Backend",
-//     progressPercentage: "90",
-//   },
-//   {
-//     Stack: "Programming",
-//     progressPercentage: "95",
-//   },
-// ];
+export const SkillBars: SkillBarsType[] = [
+  {
+    Stack: "Frontend/Design", //Insert stack or technology you have experience in
+    progressPercentage: "85", //Insert relative proficiency in percentage
+  },
+  {
+    Stack: "Backend",
+    progressPercentage: "90",
+  },
+  {
+    Stack: "Programming",
+    progressPercentage: "95",
+  },
+  {
+    Stack: "Problem solving",
+    progressPercentage: "85",
+  },
+];
 
-// export const educationInfo: EducationType[] = [
-//   {
-//     schoolName: "University of Central Punjab",
-//     subHeader: "Bachelor of Science in Computer Science",
-//     duration: "September 2017 - April 2020",
-//     desc: "",
-//     grade: "Grade A",
-//     descBullets: [], // Array of Strings
-//   },
-// ];
+export const educationInfo: EducationType[] = [
+  {
+    schoolName: "Pj College of Management & Technology",
+    subHeader: "Master of Computer Applications",
+    duration: "April 2021 - April 2022",
+    desc: "",
+    grade: "80%",
+    descBullets: [], // Array of Strings
+  },
+  {
+    schoolName: "Sonepur Degree College , Sonepur",
+    subHeader: "Bachelor of Science [honours. Computer Science]",
+    duration: "April 2016 - April 2019",
+    desc: "",
+    grade: "78%",
+    descBullets: [], // Array of Strings
+  }
+];
 
-// export const experience: ExperienceType[] = [
-//   {
-//     role: "Django Developer",
-//     company: "Meganos Software",
-//     companyLogo: "/img/icons/common/meganos.png",
-//     date: "Aug 2022 - Present",
-//     desc: "I crafted backends for diverse web apps, APIs, and WebSockets in e-commerce, podcasts, and property management. Managed server upkeep, deployments on Linux, Heroku, and AWS S3. Implemented PyTest for automated unit and integration testing, slashing 4 hours of manual testing each sprint, fortifying a dependable and flawless code foundation.",
-//   },
-//   {
-//     role: "Full Stack Developer",
-//     company: "Duseca Software",
-//     companyLogo: "/img/icons/common/duseca_software_logo.jpeg",
-//     date: "Jan 2022 - Sept 2023",
-//     desc: "Crafted robust mobile application backends employing Django, Python, and REST APIs. Leveraged Django REST Framework, PostgreSQL, AWS, Firebase, Stripe, and WebSocket for efficient development. Collaborated across teams to surpass client expectations. Designed intuitive UIs, empowering clients to effortlessly manage their applications with a visually captivating interface.",
-//     // descBullets: [
-//     // 	"Lorem ipsum dolor sit amet, consdfgectetur adipiscing elit",
-//     // 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-//     // ],
-//   },
-//   {
-//     role: "Full Stack Developer",
-//     company: "ZRTechnologies",
-//     companyLogo: "/img/icons/common/zrtech.jpeg",
-//     date: "Aug 2022 - Jun 2023",
-//     desc: "Crafting diverse web applications, I've elevated functionality and user engagement. Spearheaded Visual Portfolio, leveraging AI for captivating presentations from parsed text. Proficiently set up and optimized applications on Linux servers, guaranteeing smooth scalability and top-notch performance for seamless user experiences.",
-//   },
-//   {
-//     role: "Backend Developer",
-//     company: "Bleed-AI",
-//     companyLogo: "/img/icons/common/bleedAI.jpg",
-//     date: "Sept 2021 - Oct 2021",
-//     desc: "As a Django developer at Bleed AI, I integrated a computer vision AI model to process YouTube URLs on a website. I used Django Channels and Websockets to show real-time processing and implemented threading to run multiple instances of the AI model. I also used jQuery for UI rendering and deployed the website on a Heroku server.",
-//   },
-// ];
+export const experience: ExperienceType[] = [
+  {
+    role: "MERN Full Stack Developer",
+    company: "Hyscaler",
+    companyLogo: "/img/icons/common/hyscaler.png",
+    date: "March 2022 - Present",
+    desc: "I have developed and maintained full-stack web applications using the MERN stack. I have designed and developed RESTful APIs with Express and integrated them with third-party services. Additionally, I manage and optimize MongoDB databases. I collaborate with designers, product managers, and other developers to deliver high-quality software solutions.",
+  },
+];
 
-// export const projects: ProjectType[] = [
-//   {
-//     name: "developer-portfolio",
-//     desc: "Software Developer Portfolio Template built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
-//     github: "https://github.com/1hanzla100/developer-portfolio",
-//     link: "https://developer-portfolio-1hanzla100.vercel.app/",
-//   },
-//   {
-//     name: "Giebo",
-//     desc: "A Podcast Platform where creators can easily publish and sell their podcasts, and users can purchase with Handcash BitcoinSV, the future of fast and secure transactions.",
-//     link: "https://gibeo.io/",
-//   },
-//   {
-//     name: "O Mejor Oferta",
-//     desc: "O Mejor Oferta is a mobile marketplace for buying and selling items nearby, helping users find deals on things they want and make money from items they no longer need.",
-//     link: "https://play.google.com/store/apps/details?id=com.duseca.mejor_oferta",
-//   },
-//   {
-//     name: "Hooligan Culture",
-//     desc: "A Ecommerce Platform, where shopping meets the future! With HandCash BitcoinSV integration, you can authenticate and purchase products with ease and confidence.",
-//     link: "https://hooliganculture.com/",
-//   },
-// ];
+export const projects: ProjectType[] = [
+  {
+    name: "Neww App",
+    desc: "Neww App is a basically social media platform specially for nurses , where they are challenges to each other on fun activity and can communicate with each others",
+    github: "https://github.com/srikantasatapathy",
+    link: "#",
+  },
+  {
+    name: "Doctegrity",
+    desc: "Doctegrity is a medical consultation provide application, where user can register their self for consulating with doctor by the voice call, video call and message ",
+    github: "https://github.com/srikantasatapathy",
+    link: "#",
+  }
+];
 
 // export const feedbacks: FeedbackType[] = [
 //   {

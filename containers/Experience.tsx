@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { experience } from "../portfolio";
 import { Container, Row } from "reactstrap";

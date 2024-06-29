@@ -16823,6 +16823,9 @@ textarea[resize="horizontal"] {
 	justify-content: center;
 	border-radius: 50%;
 }
+.icon-shape:hover{
+	background-color: #72b7f6;
+}
 .icon-shape i,
 .icon-shape svg {
 	font-size: 1.25rem;
