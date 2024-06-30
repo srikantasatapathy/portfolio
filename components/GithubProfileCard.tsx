@@ -13,7 +13,7 @@ const GithubProfileCard = () => {
               <img
                 src="https://avatars.githubusercontent.com/u/80668129?v=4"
                 style={{ width: "200px" }}
-                alt=""
+                alt="srikant image"
                 className="rounded-circle img-center img-fluid shadow shadow-lg--hover mb-4"
               />
             </Col>

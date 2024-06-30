@@ -11,6 +11,7 @@ import "../../styles/styles.css";
 import "../../styles/vendor/font-awesome/css/font-awesome.min.css";
 import "../../styles/vendor/nucleo/css/nucleo.css";
 import Projects from "../../containers/Projects";
+import ImageGallery from "../../containers/ImageGallery";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <Education />
       <Experience />
       <Projects />
+      <ImageGallery/>
       <GithubProfileCard/>
     </div>
   );
