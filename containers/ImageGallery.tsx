@@ -14,6 +14,17 @@ import doc_doctor from "../public/img/icons/common/doctegrity_screenshot/doc_doc
 import doc_list from "../public/img/icons/common/doctegrity_screenshot/doc_list.png";
 import doc_message from "../public/img/icons/common/doctegrity_screenshot/doc_message.png";
 import doc_profile from "../public/img/icons/common/doctegrity_screenshot/doc_profile.png";
+import whatami_home from "../public/img/icons/common/whatami_screenshot/whatami_home.png";
+
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  Col,
+} from "reactstrap";
+import { projects } from "../portfolio";
 
 const images = [
   { src: neww_home, tag: "Neww App" },
@@ -27,17 +38,12 @@ const images = [
   { src: doc_list, tag: "Doctegrity" },
   { src: doc_message, tag: "Doctegrity" },
   { src: doc_profile, tag: "Doctegrity" },
-
-  // Add more images as needed
+  { src: whatami_home, tag: "What am i?" },
 ];
 
 const ImageGallery = () => {
   const [selectedTag, setSelectedTag] = useState("all");
-
-  const filteredImages =
-    selectedTag === "all"
-      ? images
-      : images.filter((image) => image.tag === selectedTag);
+  const filteredImages = images.filter((image) => image.tag === selectedTag);
 
   const containerStyle = {
     maxWidth: "1200px",
@@ -73,7 +79,7 @@ const ImageGallery = () => {
 
   const imageStyle = {
     width: "100%",
-    height: "auto",
+    height: "100%",
     objectFit: "cover",
     borderRadius: "8px",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -83,7 +89,7 @@ const ImageGallery = () => {
     <Fade bottom duration={2000}>
       <div style={containerStyle}>
         <div style={buttonContainerStyle}>
-          {["all", "Neww App", "Doctegrity"].map((tag) => (
+          {["all", "Neww App", "Doctegrity", "What am i?"].map((tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
@@ -94,6 +100,37 @@ const ImageGallery = () => {
           ))}
         </div>
         <div style={gridStyle}>
+          {selectedTag === "all" &&
+            projects.map((project, index) => (
+              <Card
+                style={{ flex: 1 }}
+                onClick={() => setSelectedTag(project?.name)}
+                className="shadow-lg--hover  shadow border-0 text-center rounded h-100"
+              >
+                <CardBody className="">
+                  <Image
+                    src={project.logo}
+                    style={{
+                      objectFit: "cover",
+                      left: 0,
+                      right: 0,
+                      top: "7rem",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: "7rem",
+                      height: "7rem",
+                      borderRadius: "50%",
+                    }}
+                    className="shadow mb-3"
+                    alt="companyLogo"
+                  />
+                  <CardTitle tag="h4" className="mb-2">
+                    {project.name}
+                  </CardTitle>
+                </CardBody>
+              </Card>
+            ))}
+
           {filteredImages.map((image, index) => (
             <div key={index} style={imageWrapperStyle}>
               <Image
