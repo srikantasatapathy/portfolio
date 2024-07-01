@@ -23,12 +23,14 @@
     "react-lottie": "^1.2.4",
     "react-modal": "^3.16.1",
     "react-reveal": "^1.2.2",
-    "reactstrap": "^9.2.2"
+    "reactstrap": "^9.2.2",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-modal": "^3.16.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",

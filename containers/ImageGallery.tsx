@@ -1,6 +1,6 @@
 // components/ImageGallery.js
 "use client";
-import React, { useState } from "react";
+import React, { useState ,CSSProperties} from "react";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import neww_home from "../public/img/icons/common/neww_screenshot/neww_home.jpg";
@@ -48,7 +48,7 @@ const ImageGallery = () => {
   const filteredImages = images.filter((image) => image.tag === selectedTag);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const openModal = (index: any) => {
     setCurrentImageIndex(index);
@@ -84,7 +84,7 @@ const ImageGallery = () => {
     },
   };
 
-  const modalImageStyle = {
+  const modalImageStyle:CSSProperties = {
     width: "100%",
     height: "auto",
     objectFit: "contain",
@@ -103,16 +103,35 @@ const ImageGallery = () => {
     cursor: "pointer",
   };
 
-  const leftNavButtonStyle = {
-    ...navButtonStyle,
+  const leftNavButtonStyle: CSSProperties = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
+    cursor: "pointer",
     left: "10px",
   };
 
-  const rightNavButtonStyle = {
-    ...navButtonStyle,
+  const rightNavButtonStyle: CSSProperties = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
+    cursor: "pointer",
     right: "10px",
   };
-  const closeButtonStyle = {
+
+  const closeButtonStyle: CSSProperties = {
     position: "absolute",
     top: "10px",
     right: "10px",
@@ -161,14 +180,14 @@ const ImageGallery = () => {
     padding: "8px",
   };
 
-  const imageStyle = (isHovered:any)=>({
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    borderRadius: "8px",
-    boxShadow: isHovered ? "0 8px 12px rgba(0.1, 0.1, 0.1, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
-    cursor: "pointer",
-    transition: "box-shadow 0.3s ease",
+  const imageStyle = (isHovered: boolean): CSSProperties => ({
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: '8px',
+    boxShadow: isHovered ? '0 8px 12px rgba(0.1, 0.1, 0.1, 0.3)' : '0 4px 6px rgba(0, 0, 0, 0.1)',
+    cursor: 'pointer',
+    transition: 'box-shadow 0.3s ease-in-out',
   });
 
   return (
@@ -189,9 +208,10 @@ const ImageGallery = () => {
           {selectedTag === "All" &&
             projects.map((project, index) => (
               <Card
-                style={{ flex: 1 }}
+                style={{ flex: 1, cursor: "pointer" }}
                 onClick={() => setSelectedTag(project?.name)}
                 className="shadow-lg--hover  shadow border-0 text-center rounded h-100"
+                key={index}
               >
                 <CardBody className="">
                   <Image
@@ -218,9 +238,11 @@ const ImageGallery = () => {
             ))}
 
           {filteredImages.map((image, index) => (
-            <div key={index} style={imageWrapperStyle}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
+            <div
+              key={index}
+              style={imageWrapperStyle}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               <Image
                 src={image.src}
@@ -239,7 +261,9 @@ const ImageGallery = () => {
         style={modalStyle}
         contentLabel="Image Modal"
       >
-        <button onClick={closeModal} style={closeButtonStyle}>×</button>
+        <button onClick={closeModal} style={closeButtonStyle}>
+          ×
+        </button>
         <button onClick={goToPrevious} style={leftNavButtonStyle}>
           {"<"}
         </button>
