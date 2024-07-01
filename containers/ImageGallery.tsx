@@ -15,7 +15,7 @@ import doc_list from "../public/img/icons/common/doctegrity_screenshot/doc_list.
 import doc_message from "../public/img/icons/common/doctegrity_screenshot/doc_message.png";
 import doc_profile from "../public/img/icons/common/doctegrity_screenshot/doc_profile.png";
 import whatami_home from "../public/img/icons/common/whatami_screenshot/whatami_home.png";
-
+import whatami_result from "../public/img/icons/common/whatami_screenshot/whatami_result.png";
 import {
   Card,
   CardBody,
@@ -25,6 +25,7 @@ import {
   Col,
 } from "reactstrap";
 import { projects } from "../portfolio";
+import Modal from "react-modal";
 
 const images = [
   { src: neww_home, tag: "Neww App" },
@@ -39,11 +40,93 @@ const images = [
   { src: doc_message, tag: "Doctegrity" },
   { src: doc_profile, tag: "Doctegrity" },
   { src: whatami_home, tag: "What am i?" },
+  { src: whatami_result, tag: "What am i?" },
 ];
 
 const ImageGallery = () => {
-  const [selectedTag, setSelectedTag] = useState("all");
+  const [selectedTag, setSelectedTag] = useState("All");
   const filteredImages = images.filter((image) => image.tag === selectedTag);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const openModal = (index: any) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + filteredImages.length) % filteredImages.length
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % filteredImages.length
+    );
+  };
+  const modalStyle = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      maxWidth: "80%",
+      maxHeight: "80%",
+    },
+  };
+
+  const modalImageStyle = {
+    width: "100%",
+    height: "auto",
+    objectFit: "contain",
+  };
+
+  const navButtonStyle = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    width: "40px",
+    height: "40px",
+    cursor: "pointer",
+  };
+
+  const leftNavButtonStyle = {
+    ...navButtonStyle,
+    left: "10px",
+  };
+
+  const rightNavButtonStyle = {
+    ...navButtonStyle,
+    right: "10px",
+  };
+  const closeButtonStyle = {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    width: "30px",
+    height: "30px",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
 
   const containerStyle = {
     maxWidth: "1200px",
@@ -65,6 +148,7 @@ const ImageGallery = () => {
     color: isSelected ? "white" : "#374151",
     border: "none",
     cursor: "pointer",
+    fontSize: "12px",
   });
 
   const gridStyle = {
@@ -77,19 +161,21 @@ const ImageGallery = () => {
     padding: "8px",
   };
 
-  const imageStyle = {
+  const imageStyle = (isHovered:any)=>({
     width: "100%",
     height: "100%",
     objectFit: "cover",
     borderRadius: "8px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  };
+    boxShadow: isHovered ? "0 8px 12px rgba(0.1, 0.1, 0.1, 0.3)" : "0 4px 6px rgba(0, 0, 0, 0.1)",
+    cursor: "pointer",
+    transition: "box-shadow 0.3s ease",
+  });
 
   return (
     <Fade bottom duration={2000}>
       <div style={containerStyle}>
         <div style={buttonContainerStyle}>
-          {["all", "Neww App", "Doctegrity", "What am i?"].map((tag) => (
+          {["All", "Neww App", "Doctegrity", "What am i?"].map((tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
@@ -100,7 +186,7 @@ const ImageGallery = () => {
           ))}
         </div>
         <div style={gridStyle}>
-          {selectedTag === "all" &&
+          {selectedTag === "All" &&
             projects.map((project, index) => (
               <Card
                 style={{ flex: 1 }}
@@ -132,17 +218,40 @@ const ImageGallery = () => {
             ))}
 
           {filteredImages.map((image, index) => (
-            <div key={index} style={imageWrapperStyle}>
+            <div key={index} style={imageWrapperStyle}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            >
               <Image
                 src={image.src}
                 width={900}
                 alt={`Image ${index + 1}`}
-                style={imageStyle}
+                style={imageStyle(hoveredIndex === index)}
+                onClick={() => openModal(index)}
               />
             </div>
           ))}
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={modalStyle}
+        contentLabel="Image Modal"
+      >
+        <button onClick={closeModal} style={closeButtonStyle}>×</button>
+        <button onClick={goToPrevious} style={leftNavButtonStyle}>
+          {"<"}
+        </button>
+        <Image
+          src={filteredImages[currentImageIndex]?.src}
+          alt={`Image ${currentImageIndex + 1}`}
+          style={modalImageStyle}
+        />
+        <button onClick={goToNext} style={rightNavButtonStyle}>
+          {">"}
+        </button>
+      </Modal>
     </Fade>
   );
 };

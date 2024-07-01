@@ -21,6 +21,7 @@
     "react-dom": "^18",
     "react-easy-emoji": "^1.8.1",
     "react-lottie": "^1.2.4",
+    "react-modal": "^3.16.1",
     "react-reveal": "^1.2.2",
     "reactstrap": "^9.2.2"
   },
