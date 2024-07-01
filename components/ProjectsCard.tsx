@@ -2,8 +2,9 @@ import React from "react";
 import { Card, CardBody, Col, Button } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { ProjectType } from "../types/sections";
+import { Icon } from "@iconify/react";
 
-const ProjectsCard = ({ name, desc, github, link }: ProjectType) => {
+const ProjectsCard = ({ name, desc, github, link,androidLink,iOSLink,webLink }: ProjectType) => {
   return (
     <Col lg="6">
       <Card className="shadow-lg--hover shadow mt-4">
@@ -12,35 +13,46 @@ const ProjectsCard = ({ name, desc, github, link }: ProjectType) => {
             <div className="pl-4">
               <h3>{name}</h3>
               <p className="description mt-3">{desc}</p>
-              {github ? (
+              {androidLink ? (
                 <Button
                   className="btn-icon"
-                  color="github"
-                  href={github}
+                  href={androidLink}
                   target="_blank"
                   rel="noopener"
-                  aria-label="Github"
+                  aria-label="Android"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-github" />
+                  <Icon icon="flat-color-icons:android-os" data-inline="false" width={20}></Icon>
                   </span>
                 </Button>
               ) : null}
-              {link ? (
+              {iOSLink ? (
                 <Button
                   className="btn-icon"
-                  color="success"
-                  href={link}
+                  href={iOSLink}
                   target="_blank"
                   rel="noopener"
-                  aria-label="Twitter"
+                  aria-label="iOS"
                 >
                   <span className="btn-inner--icon">
-                    <i className="fa fa-arrow-right mr-2" />
+                  <Icon icon="cib:app-store-ios" style={{color: '#118eef'}} data-inline="false" width={20} height={20}></Icon>
                   </span>
-                  <span className="nav-link-inner--text ml-1">Demo</span>
                 </Button>
               ) : null}
+              {webLink ? (
+                <Button
+                  className="btn-icon"
+                  href={webLink}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Web"
+                >
+                  <span className="btn-inner--icon">
+                  <Icon icon="mdi:web" style={{color: '#118eef'}} data-inline="false" width={20}></Icon>
+                  </span>
+                </Button>
+              ) : null}
+              
             </div>
           </div>
         </CardBody>

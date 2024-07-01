@@ -149,22 +149,25 @@ export const projects: ProjectType[] = [
     name: "Neww App",
     desc: "Neww App is a basically social media platform specially for nurses , where they are challenges to each other on fun activity and can communicate with each others",
     github: "https://github.com/srikantasatapathy",
-    link: "#",
-    logo:neww_logo
+    logo:neww_logo,
+    androidLink: "https://play.google.com/store/apps/details?id=com.neww.app",
+    iOSLink: "https://apps.apple.com/us/app/neww/id6480421315",
   },
   {
     name: "Doctegrity",
     desc: "Doctegrity is a medical consultation provide application, where user can register their self for consulating with doctor by the voice call, video call and message ",
     github: "https://github.com/srikantasatapathy",
     link: "#",
-    logo:doc_logo
+    logo:doc_logo,
+    webLink: "https://www.doctegrity.com/",
   },
   {
     name: "What am i?",
     desc: "Experience the future of object recognition with our website! Simply point your camera at any object, and our AI technology will instantly identify it, providing you with the product's name, description, and a convenient Google search link. Say goodbye to manual searches and hello to seamless, intuitive exploration",
     github: "https://github.com/srikantasatapathy",
     link: "#",
-    logo:gemini_logo
+    logo:gemini_logo,
+    webLink: "https://whatami-three.vercel.app/",
   }
 ];
 

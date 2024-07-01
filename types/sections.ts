@@ -79,6 +79,10 @@ export type ProjectType = {
   github?: string;
   link?: string;
   logo?: any;
+  androidLink?: string;
+  iOSLink?: string;
+  webLink?: string;
+
 };
 
 // * FEEDBACK SECTION
