@@ -19,8 +19,8 @@ export const greetings: GreetingsType = {
   name: "Srikanta Satapathy",
   title: "Hi all, I'm Srikanta",
   description:
-    "I'm a passionate MERN Full Stack web developer with experience developing Full Stack web and mobile applications with React-Native,React.js,Next js, Nodejs and Cloud Technologies. I am strongly interested in learning new technologies and implementing them in my projects. I'm a self-motivated and hardworking individual who is always ready to learn new things and work in a team.",
-  resumeLink: "#",
+    "I'm a passionate MERN Full Stack web developer with experience of developing Full Stack web and mobile applications with React-Native,React.js,Next js, Nodejs and Cloud Technologies. I am strongly interested in learning new technologies and implementing them in my projects. I'm a self-motivated and hardworking individual who is always ready to learn new things and work in a team.",
+  resumeLink: "./resumePdf/resume.pdf",
 };
 
 // export const openSource = {
@@ -147,7 +147,7 @@ export const experience: ExperienceType[] = [
 export const projects: ProjectType[] = [
   {
     name: "Neww App",
-    desc: "Neww App is a basically social media platform specially for nurses , where they are challenges to each other on fun activity and can communicate with each others",
+    desc: "Neww App is a social media platform specially for nurses, where they challenge each other on fun activities and can communicate with each other.",
     github: "https://github.com/srikantasatapathy",
     logo:neww_logo,
     androidLink: "https://play.google.com/store/apps/details?id=com.neww.app",
@@ -155,7 +155,7 @@ export const projects: ProjectType[] = [
   },
   {
     name: "Doctegrity",
-    desc: "Doctegrity is a medical consultation provide application, where user can register their self for consulating with doctor by the voice call, video call and message ",
+    desc: "Doctegrity is a medical consultation application, where user can register theirself for consulating with doctor by the voice call, video call and message ",
     github: "https://github.com/srikantasatapathy",
     link: "#",
     logo:doc_logo,

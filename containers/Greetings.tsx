@@ -30,7 +30,9 @@ const Greetings = () => {
             <div className="col px-0">
               <Row>
                 <Col lg="6">
-                  <h1 className="display-3 text-white">{greetings.title + " "}</h1>
+                  <h1 className="display-3 text-white">
+                    {greetings.title + " "}
+                  </h1>
                   <p className="lead text-white">{greetings.description}</p>
                   <SocialLinks />
                   {greetings.resumeLink && (
@@ -39,6 +41,7 @@ const Greetings = () => {
                         className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                         color="default"
                         href={greetings.resumeLink}
+                        download
                       >
                         <span className="btn-inner--icon mr-1">
                           <i className="fa fa-file" />
