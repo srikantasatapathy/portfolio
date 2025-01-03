@@ -1,6 +1,6 @@
 // components/ImageGallery.js
 "use client";
-import React, { useState ,CSSProperties} from "react";
+import React, { useState, CSSProperties } from "react";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import neww_home from "../public/img/icons/common/neww_screenshot/neww_home.jpg";
@@ -84,7 +84,7 @@ const ImageGallery = () => {
     },
   };
 
-  const modalImageStyle:CSSProperties = {
+  const modalImageStyle: CSSProperties = {
     width: "100%",
     height: "auto",
     objectFit: "contain",
@@ -181,16 +181,19 @@ const ImageGallery = () => {
   };
 
   const imageStyle = (isHovered: boolean): CSSProperties => ({
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    borderRadius: '8px',
-    boxShadow: isHovered ? '0 8px 12px rgba(0.1, 0.1, 0.1, 0.3)' : '0 4px 6px rgba(0, 0, 0, 0.1)',
-    cursor: 'pointer',
-    transition: 'box-shadow 0.3s ease-in-out',
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "8px",
+    boxShadow: isHovered
+      ? "0 8px 12px rgba(0.1, 0.1, 0.1, 0.3)"
+      : "0 4px 6px rgba(0, 0, 0, 0.1)",
+    cursor: "pointer",
+    transition: "box-shadow 0.3s ease-in-out",
   });
 
   return (
+    // image gallery section
     <Fade bottom duration={2000}>
       <div style={containerStyle}>
         <div style={buttonContainerStyle}>
